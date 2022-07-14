@@ -1,9 +1,76 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Project-o-Matic</PageTitle>
 
-<h1>Hello, world!</h1>
+<Button @onclick="FetchProject">Show</Button>
 
-Welcome to your new app.
+<Modal @ref="projectModal">
+    <ModalContent Centered Size="ModalSize.ExtraLarge">
+        <ModalHeader>
+            <CloseButton />
+        </ModalHeader>
+        <ModalBody>
+            <Field>              
+                <div> 
+                    @if(SelectedProject != null)
+                    {
+                        @((MarkupString)SelectedProject.ProjectBrief)
+                    }                 
+                </div>
+            </Field>
+            <Field>              
+                    @if (SelectedProject.HasSolution)
+                    {                  
+                        @if(!IsSolutionVisible)
+                        {
+                            <h5>Need some assistance?</h5>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+                            <a href="" @onclick="ShowSolution">Show Solution</a>
+                        }
+
+                       @* @if(SelectedSolution != null && HasSolution)
+                        {
+                            <h5>Solution</h5>
+
+                            <hr />
+
+                            @((MarkupString)SelectedSolution.SolutionContent)
+                        }*@
+                    }
+                    else
+                    {
+                        <p>No solution available for this project. Why not <a href="https://github.com/JoelPickin/Project-o-Matic" target="_blank">add yours</a>.</p>
+                    }
+            </Field>
+@*            <Field>              
+                <h4>Share Your Finished Product</h4>
+                <p>Share button here.</p>
+            </Field>*@
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideProjectModal">Close</Button>
+            <Button Color="Color.Primary" Clicked="FetchProject">Reroll Project</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+<Modal @ref="solutionModal">
+    <ModalContent Centered Size="ModalSize.ExtraLarge">
+        <ModalBody>
+            <Field>              
+        @if(SelectedSolution != null && IsSolutionVisible)
+        {
+            <h5>Solution</h5>
+
+            <hr />
+
+            @((MarkupString)SelectedSolution.SolutionContent)
+        }
+            </Field>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideSolutionModal">Back to project</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
