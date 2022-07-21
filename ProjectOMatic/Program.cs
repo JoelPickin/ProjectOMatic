@@ -1,12 +1,7 @@
 using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Icons.FontAwesome;
-using GraphQL.Client.Abstractions;
-using GraphQL.Client.Http;
 using Microsoft.AspNetCore.Authentication.Certificate;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.EntityFrameworkCore;
 using ProjectOMatic.Services;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,7 +1,4 @@
 ﻿using Blazorise;
-using GraphQL;
-using GraphQL.Client.Http;
-using GraphQL.Client.Serializer.Newtonsoft;
 using Microsoft.EntityFrameworkCore;
 using ProjectOMatic.Data;
 using ProjectOMatic.Helpers;
