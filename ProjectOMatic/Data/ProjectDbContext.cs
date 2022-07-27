@@ -11,6 +11,7 @@ namespace ProjectOMatic.Data
         public DbSet<Project> Projects { get; set; } = null!;
         public DbSet<Solution> Solutions { get; set; } = null!;
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -18,8 +19,10 @@ namespace ProjectOMatic.Data
                 IConfigurationRoot configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json")
+                    .AddUserSecrets<Program>()
                     .Build();
-                var connectionString = configuration.GetConnectionString("DefaultConnectionString");
+
+                var connectionString = configuration.GetConnectionString("Database:ConnectionString");
 
                 optionsBuilder.UseMySQL(connectionString);
             }

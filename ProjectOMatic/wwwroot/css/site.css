@@ -129,7 +129,7 @@ div > pre {
 .reel-frames {
     height: 280px;
     width: 130px;
-    margin: 20px 20px;
+    margin: 0px 20px;
     padding: 5px;
     border-radius: 10px;
     background: linear-gradient(to bottom, #9BD9B2 0%,#000000 50%, #9BD9B2 100%);
@@ -272,14 +272,13 @@ div > pre {
 
 /*
 Text Container Start*/
-
+/**/
 .text-main-container {
     padding: 10px;
     border-radius: 10px;
-    background: linear-gradient(to bottom, #9BD9B2 0%,#000000 50%, #9BD9B2 100%);
-    border: 4px solid #6f9c80;
-    width: 50%;
+    width: 80%;
     margin: auto;
+    background-color: white;
 }
 
 .text-inner-container {
@@ -293,13 +292,44 @@ Text Container Start*/
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fafcfb;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.sub-title {
+    margin: auto;
+    max-width: 600px;
+    min-width: 350px;
+}
+
+.sub-title-heading {
+    text-align: center;
+}
+
+.sub-title-container {
+    background-color: #f3faf6;
+    border-bottom: none;
+    border-top: 1px solid #9BD9B2;
+}
+
+.collapse-text-container {
+    background-color: #f3faf6;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.card {
+    margin: 0;
+}
+
+.accordion {
+    margin-top: 100px;
 }
 
 /*Text Container End Here*/
-
 /*Modal Starts Here*/
-
 .modal-header {
     background-color: #4a858b;
     border-bottom: 10px solid #9BD9B2;
@@ -324,4 +354,210 @@ Text Container Start*/
     background-color: #9BD9B2;
     color: black;
     font-family: 'Bebas Neue', cursive;
+}
+
+/*Modal Ends Here*/
+
+@media (max-width: 480px) {
+    #main {
+        background-color: #f3faf6;
+        display: flex;
+    }
+
+    .main-inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .column {
+        background-color: #4a858b;
+        width: 1%;
+        display: none;
+    }
+
+    .column-left {
+        border-right: 3px solid #9BD9B2;
+    }
+
+    .column-right {
+        border-left: 3px solid #9BD9B2;
+    }
+
+    .title-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    .title {
+        max-width: 700px;
+        min-width: 150px;
+    }
+
+    .overlay-button {
+    }
+
+    .overlay-button-container {
+    }
+
+    /*Machine Start*/
+    #machine {
+
+    }
+
+    /*Inner Machine Start*/
+
+#framework-center {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    margin: auto;
+}
+
+.reel-frames {
+    height: 280px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #9BD9B2 0%,#000000 50%, #9BD9B2 100%);
+    border: 2px solid #6f9c80;
+}
+
+.reels-machinery {
+    background: #000;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.reels-machinery > div {
+    height: 100%;
+    background-color: #fff;
+    border-radius: 7px / 50%;
+    overflow: hidden;
+    box-shadow: inset 0px 20px 20px -10px #696868, inset 0px -20px 20px -10px #696868;
+}
+
+.figures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.reel-text {
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+/*Inner Machine End*/
+
+
+/*Control Panel Start*/
+
+#control-panel {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.button-group {
+    margin-top: 60px;
+}
+
+.option-text-container {
+    margin: 10px 0;
+}
+
+.option-text {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    font-size: 22px;
+}
+
+.buttons {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    text-align: center;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.up-button {
+    cursor: pointer;
+    background-color: #4a858b;
+    box-shadow: 0px 5px 0px 0px #2f5458;
+    border: 1px solid #2f5458;
+}
+
+.up-button:hover {
+    background-color: #62aab1;
+}
+
+.up-button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+.down-button {
+    cursor: pointer;
+    background-color: #9BD9B2;
+    box-shadow: 0px 5px 0px 0px #6f9c80;
+    border: 1px solid #6f9c80;
+}
+
+.down-button:hover {
+       
+    background-color: #a9eac2;
+}
+
+.down-button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+#button-panel {
+    margin: auto;
+    border-radius: 5px;
+}
+
+#fetch-button {
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 31px;
+    height: 100px;
+    width: 100px;
+    background-color: #e7766a;
+    box-shadow: 0px 5px 0px 0px #CE3323;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    border-radius: 70%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #a5372b;
+}
+
+#fetch-button:active {
+    box-shadow: 0 0 2px darkslategray;
+    transform: translateY(2px);
+}
+
+    #fetch-button:hover {
+        background-color: #ed8d82;
+    }
+
+/*Control Panel eND*/
 }

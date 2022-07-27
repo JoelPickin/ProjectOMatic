@@ -73,10 +73,11 @@
     </div>
 
      <div class="overlay-button-container">
-        <Button Class="overlay-button">WTF is the Project-o-Matic?</Button>
+       @* <Button Class="overlay-button">WTF is the Project-o-Matic?</Button>*@
     </div>
 
-        <HowToTextComponent></HowToTextComponent>
+    @*    <HowToTextComponent></HowToTextComponent>*@
+    <TextAccordion></TextAccordion>
    </div>
            <div class="column column-right">
 
@@ -86,6 +87,7 @@
    
 <Modal @ref="projectModal">
     <ModalContent Centered Size="ModalSize.ExtraLarge">
+         <ModalHeader Class="modal-header"></ModalHeader>
         <ModalBody Class="modal-body">
             <Field>              
                 <div> 
@@ -125,7 +127,7 @@
             </Field>*@
         </ModalBody>
         <ModalFooter Class="modal-footer">
-            <Button Class="modal-close-button" Color="Color.Info" Clicked="@HideProjectModal">Close</Button>
+            <Button Class="modal-close-button" Clicked="@HideProjectModal">Close</Button>
             <Button Class="modal-fetch-button" Clicked="FetchProject">Reroll Project</Button>
         </ModalFooter>
     </ModalContent>

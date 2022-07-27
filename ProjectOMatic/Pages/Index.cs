@@ -25,6 +25,7 @@ namespace ProjectOMatic.Pages
         public bool IsSolutionVisible { get; set; }
         public bool IsLoading { get; set; }
 
+
         protected override void OnInitialized()
         {
             _markdownService.LoadProjectMarkdownDataToDB();
