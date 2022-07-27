@@ -28,16 +28,16 @@ namespace ProjectOMatic.Pages
 
         protected override void OnInitialized()
         {
-            _markdownService.LoadProjectMarkdownDataToDB();
-            _markdownService.LoadSolutionMarkdownDataToDB();
+            //_markdownService.LoadProjectMarkdownDataToDB();
+            //_markdownService.LoadSolutionMarkdownDataToDB();
 
-            SkillLevels = LoadSkillLevels();
-            Languages = LoadLanguages();
+            //SkillLevels = LoadSkillLevels();
+            //Languages = LoadLanguages();
 
-            if (SelectedLanguage != null)
-            {
-                Frameworks = LoadFrameworks(SelectedLanguage.Id);
-            }
+            //if (SelectedLanguage != null)
+            //{
+            //    Frameworks = LoadFrameworks(SelectedLanguage.Id);
+            //}
 
             base.OnInitialized();
         }
