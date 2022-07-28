@@ -22,7 +22,8 @@ namespace ProjectOMatic.Data
                     .AddUserSecrets<Program>()
                     .Build();
 
-                var connectionString = configuration.GetConnectionString("Database:ConnectionString");
+                var x = Environment.GetEnvironmentVariable("ConnectionString");
+                var connectionString = configuration.GetConnectionString(Environment.GetEnvironmentVariable("ConnectionString"));
 
                 optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(10, 4, 17)));
             }
