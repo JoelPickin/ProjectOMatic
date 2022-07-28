@@ -28,11 +28,10 @@ namespace ProjectOMatic.Pages
         public bool IsSolutionVisible { get; set; }
         public bool IsLoading { get; set; }
 
-
         protected override void OnInitialized()
         {
-            _markdownService.LoadProjectMarkdownDataToDB();
-            _markdownService.LoadSolutionMarkdownDataToDB();
+            _markdownService.LoadProjectMarkdownDataToDB(appEnvironment.WebRootPath);
+            _markdownService.LoadSolutionMarkdownDataToDB(appEnvironment.WebRootPath);
 
             SkillLevels = LoadSkillLevels();
             Languages = LoadLanguages();
