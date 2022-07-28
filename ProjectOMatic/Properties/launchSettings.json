@@ -24,13 +24,5 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
-  },
-
-  "configurations": [
-    {
-      "“env”": {
-        "“ASPNETCORE_ENVIRONMENT”": "“Development”"
-      }
-    }
-  ]
+  }
 }

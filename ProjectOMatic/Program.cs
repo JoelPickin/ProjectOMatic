@@ -45,4 +45,7 @@ app.UseRouting();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
+app.UseDeveloperExceptionPage();
+
+
 app.Run();
