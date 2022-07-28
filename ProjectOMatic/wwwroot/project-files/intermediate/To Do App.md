@@ -16,4 +16,4 @@
 - Search tasks
 - Filter tasks based on tags
 
-## Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 
+### Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 

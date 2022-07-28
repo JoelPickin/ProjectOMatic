@@ -25,5 +25,7 @@ namespace ProjectOMatic.Models
         public string FrameworkName { get; set; }
         [NotMapped]
         public string SolutionContent { get; set; }
+        [NotMapped]
+        public string Title { get; set; }
     }
 }

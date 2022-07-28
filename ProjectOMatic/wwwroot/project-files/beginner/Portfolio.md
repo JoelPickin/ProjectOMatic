@@ -17,4 +17,4 @@
 	- Ensure each link takes you to the correct page/section
 - Add a footer with your name in it
 
-## Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 
+### Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 

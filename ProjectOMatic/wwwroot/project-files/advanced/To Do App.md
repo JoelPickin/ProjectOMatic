@@ -21,4 +21,4 @@
 - Assign tasks to groups
 - Create an API to handle all the CRUD actions
 
-## Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 
+### Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 

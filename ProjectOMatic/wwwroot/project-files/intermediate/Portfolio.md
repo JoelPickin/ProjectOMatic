@@ -22,4 +22,4 @@
 	- Add the links from your navigation bar
 - Make the site responsive for all screen sizes
 
-## Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 
+### Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 

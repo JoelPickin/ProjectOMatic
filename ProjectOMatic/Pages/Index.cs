@@ -31,16 +31,16 @@ namespace ProjectOMatic.Pages
 
         protected override void OnInitialized()
         {
-            _markdownService.LoadProjectMarkdownDataToDB();
-            _markdownService.LoadSolutionMarkdownDataToDB();
+            //_markdownService.LoadProjectMarkdownDataToDB();
+            //_markdownService.LoadSolutionMarkdownDataToDB();
 
-            SkillLevels = LoadSkillLevels();
-            Languages = LoadLanguages();
+            //SkillLevels = LoadSkillLevels();
+            //Languages = LoadLanguages();
 
-            if (SelectedLanguage != null)
-            {
-                Frameworks = LoadFrameworks(SelectedLanguage.Id);
-            }
+            //if (SelectedLanguage != null)
+            //{
+            //    Frameworks = LoadFrameworks(SelectedLanguage.Id);
+            //}
 
 
             base.OnInitialized();
@@ -161,6 +161,7 @@ namespace ProjectOMatic.Pages
                     var solution = await GetSolution(SelectedSolution.Slug, SelectedSolution.HostName);
 
                     SelectedSolution.SolutionContent = MarkdownHelper.Parse(solution.Content);
+                    SelectedSolution.Title = solution.Title;
                 }
                 else
                 {
@@ -169,6 +170,7 @@ namespace ProjectOMatic.Pages
                     var solution = await GetSolution(SelectedSolution.Slug, SelectedSolution.HostName);
 
                     SelectedSolution.SolutionContent = MarkdownHelper.Parse(solution.Content);
+                    SelectedSolution.Title = solution.Title;
                 }
 
                 IsSolutionVisible = true;
@@ -202,6 +204,7 @@ namespace ProjectOMatic.Pages
       post(slug:""{slug}"", hostname: ""{hostName}"") {{
         title
         content
+coverImage
       }}
         }}"
             };

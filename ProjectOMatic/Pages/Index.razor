@@ -16,8 +16,10 @@
             <div class="reel-frames">
               <div class="reels-machinery">
                     <div class="figures" name="level">
+                        <div class="reel">
                         <img height="80" width="80" src="images/skill-level-icons/@SelectedSkillLevel.Icon"/>
                         <p class="reel-text">@SelectedSkillLevel.Name</p>
+                        </div>
                     </div>
               </div>
               <div class="option-text-container">
@@ -34,8 +36,10 @@
             <div class="reel-frames">
               <div class="reels-machinery">
                     <div class="figures" name="language">
+                         <div class="reel">
                         <img height="80" width="80" src="images/language-icons/@SelectedLanguage.Icon"/>
                         <p class="reel-text">@SelectedLanguage.Name</p>
+                        </div>
                     </div>
               </div>
               <div class="option-text-container">
@@ -51,8 +55,10 @@
             <div class="reel-frames">
               <div class="reels-machinery">
                 <div class="figures" name="framework">
+                     <div class="reel">
                     <img height="80" width="80" src="images/framework-icons/@SelectedFramework.Icon"/>
                     <p class="reel-text">@SelectedFramework.Name</p>
+                    </div>
                 </div>
               </div>
               <div class="option-text-container">
@@ -76,7 +82,6 @@
         @*<Button Class="overlay-button">WTF is the Project-o-Matic?</Button>*@
     </div>
 
-    @*    <HowToTextComponent></HowToTextComponent>*@
     <TextAccordion></TextAccordion>
 
               <div class="footer">
@@ -106,23 +111,14 @@
                     {                  
                         @if(!IsSolutionVisible)
                         {
-                            <h5>Need some assistance?</h5>
+                            <h5>Want to see how someone else solved it?</h5>
 
                             <a href="" @onclick="ShowSolution">Show Solution</a>
                         }
-
-                       @* @if(SelectedSolution != null && HasSolution)
-                        {
-                            <h5>Solution</h5>
-
-                            <hr />
-
-                            @((MarkupString)SelectedSolution.SolutionContent)
-                        }*@
                     }
                     else
                     {
-                        <p>No solution available for this project. Why not <a href="https://github.com/JoelPickin/Project-o-Matic">add yours</a>.</p>
+                        <p>No solution available for this project. Why not <a href="https://github.com/JoelPickin/ProjectOMatic">add one</a>.</p>
                     }
             </Field>
 @*            <Field>              
@@ -132,7 +128,7 @@
         </ModalBody>
         <ModalFooter Class="modal-footer">
             <Button Class="modal-close-button" Clicked="@HideProjectModal">Close</Button>
-            <Button Class="modal-fetch-button" Clicked="FetchProject">Reroll Project</Button>
+            <Button Class="modal-fetch-button" Clicked="FetchProject">New Project</Button>
         </ModalFooter>
     </ModalContent>
 </Modal>
@@ -140,14 +136,21 @@
 
 <Modal @ref="solutionModal">
     <ModalContent Centered Size="ModalSize.ExtraLarge">
-        <ModalHeader Class="modal-header">Solution</ModalHeader>
+        <ModalHeader Class="modal-header">
+           </ModalHeader>
         <ModalBody>
             <Field>              
         @if(SelectedSolution != null && IsSolutionVisible)
         {
+            <div>
+                <h1 class="solution-heading">@SelectedSolution.Title</h1>
+                <h3 class="solution-heading">Created By: <a href="https://twitter.com/TechPickleJoel">Joel Pickin</a></h3>
+            </div>
+
+             <hr />
+
              @((MarkupString)SelectedSolution.SolutionContent)
             <hr />
-
         }
             </Field>
         </ModalBody>

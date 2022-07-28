@@ -28,4 +28,4 @@
 - Add parralex scrolling OR scrolling animations to show content when it comes into view
 - Add meta data to show a preview of your site/face when it is shared on different social medias
 
-## Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 
+### Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 

@@ -123,6 +123,19 @@ a, .btn-link {
     padding-top: 1rem;
 }
 
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #417980;
+}
+
+    a:hover {
+        color: #63b7c2;
+    }
+
 /*Machine Start*/
 #machine {
     display: flex;
@@ -342,6 +355,7 @@ Text Container Start*/
 /*Text Container End Here*/
 /*Modal Starts Here*/
 .modal-header {
+    color: white;
     background-color: #4a858b;
     border-bottom: 10px solid #9BD9B2;
 }
@@ -377,17 +391,13 @@ div > pre {
     border-radius: 10px;
 }
 
-img, video {
-    max-width: 100%;
-    height: auto;
+.solution-heading {
+    text-align: center;
 }
-
 /*h2 {
     margin-top: 30px;
 }*/
-
 /*Modal Ends Here*/
-
 @media (max-width: 480px) {
     #main {
         background-color: #f3faf6;
@@ -590,4 +600,35 @@ img, video {
     }
 
 /*Control Panel eND*/
+}
+
+
+/*.reel {
+    -webkit-animation: spin 0.1s linear infinite;
+    -webkit-animation: spin 0.1s linear infinite;
+    -moz-animation: spin 0.1s linear infinite;
+    animation: spin 0.1s linear infinite;
+}*/
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: translateY(300px);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: translateY(300px);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translateY(-300px);
+    }
+
+    100% {
+        -webkit-transform: translateY(300px);
+        transform: translateY(300px);
+    }
 }

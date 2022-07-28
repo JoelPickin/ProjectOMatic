@@ -13,4 +13,4 @@
 - Update an existing task
 - Mark a task as completed
 
-## Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 
+### Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 

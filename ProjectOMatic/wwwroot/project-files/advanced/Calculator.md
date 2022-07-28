@@ -22,4 +22,4 @@
 - Show previous calculations in a list 
 - On pressing reset button, reset all inputs and input fields
 
-## Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 
+### Created By: [Joel Pickin](https://twitter.com/TechPickleJoel) 
