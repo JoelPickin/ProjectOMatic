@@ -1,4 +1,7 @@
 ﻿using Blazorise;
+using GraphQL;
+using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.Newtonsoft;
 using Microsoft.EntityFrameworkCore;
 using ProjectOMatic.Data;
 using ProjectOMatic.Helpers;
@@ -39,37 +42,9 @@ namespace ProjectOMatic.Pages
                 Frameworks = LoadFrameworks(SelectedLanguage.Id);
             }
 
+
             base.OnInitialized();
         }
-
-        //public async void GetSolutions()
-        //{
-        //    //var client = new GraphQLHttpClient(new GraphQLHttpClientOptions
-        //    //{
-        //    //    EndPoint = new Uri("https://api.hashnode.com/")
-        //    //}, new NewtonsoftJsonSerializer());
-
-        //    //var request = new GraphQLRequest
-        //    //{
-        //    //    Query = @"{
-        //    //            user(username: ""joelpickin"") {
-        //    //                publication {
-        //    //                    posts(page: 0) {
-        //    //                        title
-        //    //                        brief
-        //    //                        slug
-        //    //               }
-        //    //           }
-        //    //        }
-        //    //     }"
-        //    //};
-
-        //    //var response = await client.SendQueryAsync<ResponseType>(request);
-
-        //    //var posts = response.Data.User.Publication.Posts;
-
-        //    //TODO - See if Hashnode release an API call where you can get all posts based on a tag.
-        //}
 
         private List<SkillLevel> LoadSkillLevels()
         {
@@ -165,7 +140,7 @@ namespace ProjectOMatic.Pages
             }
         }
 
-        public void ShowSolution()
+        public async void ShowSolution()
         {
             using ProjectDbContext context = new ProjectDbContext();
 
@@ -183,23 +158,17 @@ namespace ProjectOMatic.Pages
 
                     SelectedSolution = solutions[randomSolutionNum];
 
-                    int start = SelectedSolution.SolutionContent.IndexOf("#");
-                    int end = SelectedSolution.SolutionContent.IndexOf("##", start);
+                    var solution = await GetSolution(SelectedSolution.Slug, SelectedSolution.HostName);
 
-                    SelectedSolution.SolutionContent = SelectedSolution.SolutionContent.Remove(start, end);
-
-                    SelectedSolution.SolutionContent = MarkdownHelper.Parse(SelectedSolution.SolutionContent);
+                    SelectedSolution.SolutionContent = MarkdownHelper.Parse(solution.Content);
                 }
                 else
                 {
                     SelectedSolution = solutions.FirstOrDefault();
 
-                    int start = SelectedSolution.SolutionContent.IndexOf("#");
-                    int end = SelectedSolution.SolutionContent.IndexOf("##", start);
+                    var solution = await GetSolution(SelectedSolution.Slug, SelectedSolution.HostName);
 
-                    SelectedSolution.SolutionContent = SelectedSolution.SolutionContent.Remove(start, end);
-
-                    SelectedSolution.SolutionContent = MarkdownHelper.Parse(SelectedSolution.SolutionContent);
+                    SelectedSolution.SolutionContent = MarkdownHelper.Parse(solution.Content);
                 }
 
                 IsSolutionVisible = true;
@@ -217,6 +186,29 @@ namespace ProjectOMatic.Pages
 
                 IsSolutionVisible = true;
             }
+        }
+
+
+        public async Task<Post> GetSolution(string slug, string hostName)
+        {
+            var client = new GraphQLHttpClient(new GraphQLHttpClientOptions
+            {
+                EndPoint = new Uri("https://api.hashnode.com/")
+            }, new NewtonsoftJsonSerializer());
+
+            var request = new GraphQLRequest
+            {
+                Query = $@"{{
+      post(slug:""{slug}"", hostname: ""{hostName}"") {{
+        title
+        content
+      }}
+        }}"
+            };
+
+            var response = await client.SendQueryAsync<ResponseType>(request);
+
+            return response.Data.Post;
         }
 
         public List<Project> LoadProjects()

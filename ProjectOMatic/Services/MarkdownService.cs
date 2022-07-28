@@ -2,6 +2,7 @@
 using Markdig.Syntax;
 using ProjectOMatic.Data;
 using ProjectOMatic.Models;
+using System.Text.Json;
 
 namespace ProjectOMatic.Services
 {
@@ -11,35 +12,28 @@ namespace ProjectOMatic.Services
         {
             string path = Path.Combine(Path.GetDirectoryName(Environment.CurrentDirectory), @"ProjectOMatic\wwwroot\solution-files");
 
-            var files = new DirectoryInfo(path).GetFiles().OrderBy(f => f.LastWriteTime).ToList();
+            var solutionListFile = new DirectoryInfo(path).GetFiles().FirstOrDefault();
+
+            var jsonContent = File.ReadAllText(solutionListFile.FullName);
+
+            var solutionList = JsonSerializer.Deserialize<List<Solution>>(jsonContent);
 
             var solutionCount = GetSolutionCountFromDB();
 
-            if (files.Count() > solutionCount)
+            using ProjectDbContext context = new ProjectDbContext();
+
+            if (solutionList.Count() > solutionCount)
             {
-                for (int i = solutionCount; i < files.Count(); i++)
+                for(int i = solutionCount; i < solutionList.Count(); i++)
                 {
-                    var fileText = File.ReadAllText(files[i].FullName);
-
-                    var markdownDocument = Markdown.Parse(fileText);
-
-                    var docInfo = markdownDocument.Select(b => b as HeadingBlock)
-                    .Where(b => b != null)
-                    .Select(hb => hb.Inline.FirstChild.ToString()).ToList();
-
-                    var title = docInfo[0];
-                    var languageName = docInfo[1];
-                    var frameworkName = docInfo[2];
-
-                    using ProjectDbContext context = new ProjectDbContext();
-
-                    var project = context.Projects.Where(p => p.Title.ToLower() == title.ToLower()).FirstOrDefault();
-                    var language = context.Languages.Where(l => l.Name.ToLower() == languageName.ToLower()).FirstOrDefault();
-                    var framework = context.Frameworks.Where(l => l.Name.ToLower() == frameworkName.ToLower()).FirstOrDefault();
+                    var project = context.Projects.Where(p => p.Title.ToLower() == solutionList[i].ProjectName.ToLower()).FirstOrDefault();
+                    var language = context.Languages.Where(l => l.Name.ToLower() == solutionList[i].LanguageName.ToLower()).FirstOrDefault();
+                    var framework = context.Frameworks.Where(l => l.Name.ToLower() == solutionList[i].FrameworkName.ToLower()).FirstOrDefault();
 
                     Solution solution = new Solution
                     {
-                        SolutionContent = fileText,
+                        Slug = solutionList[i].Slug,
+                        HostName = solutionList[i].HostName,
                         Project = project,
                         Language = language,
                         Framework = framework,

@@ -63,12 +63,6 @@ a, .btn-link {
     content: "An error has occurred."
 }
 
-div > pre {
-    border: solid 5px black;
-}
-
-
-
 #main {
     background-color: #f3faf6;
     display: flex;
@@ -109,7 +103,24 @@ div > pre {
 }
 
 .overlay-button-container {
-    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #9BD9B2;
+    color: black;
+    text-align: center;
+    margin: auto;
+    padding-top: 1rem;
 }
 
 /*Machine Start*/
@@ -355,6 +366,25 @@ Text Container Start*/
     color: black;
     font-family: 'Bebas Neue', cursive;
 }
+
+div > pre {
+    padding: 20px;
+    background-color: #26464a;
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/*h2 {
+    margin-top: 30px;
+}*/
 
 /*Modal Ends Here*/
 

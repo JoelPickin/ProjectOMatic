@@ -24,7 +24,7 @@ namespace ProjectOMatic.Data
 
                 var connectionString = configuration.GetConnectionString("Database:ConnectionString");
 
-                optionsBuilder.UseMySQL(connectionString);
+                optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(10, 4, 17)));
             }
         }
     }

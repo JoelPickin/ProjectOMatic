@@ -2,7 +2,7 @@
 
 <PageTitle>Project-o-Matic</PageTitle>
 
-<div id="main">
+<div id="main">               
         <div class="column column-left">
 
     </div>
@@ -73,11 +73,15 @@
     </div>
 
      <div class="overlay-button-container">
-       @* <Button Class="overlay-button">WTF is the Project-o-Matic?</Button>*@
+        @*<Button Class="overlay-button">WTF is the Project-o-Matic?</Button>*@
     </div>
 
     @*    <HowToTextComponent></HowToTextComponent>*@
     <TextAccordion></TextAccordion>
+
+              <div class="footer">
+      <p>Created for <a href="https://twitter.com/TechPickleJoel/status/1527273923037081601">The Self-Taught Tech Network</a> as part of the <a href="https://planetscale.com/?utm_source=hashnode&utm_medium=hackathon&utm_campaign=announcement_article">PlanetScale</a> X <a href="https://hashnode.com/?source=planetscale_hackathon_announcement">Hashnode</a> Hackathon</p>
+    </div>
    </div>
            <div class="column column-right">
 
@@ -136,15 +140,14 @@
 
 <Modal @ref="solutionModal">
     <ModalContent Centered Size="ModalSize.ExtraLarge">
+        <ModalHeader Class="modal-header">Solution</ModalHeader>
         <ModalBody>
             <Field>              
         @if(SelectedSolution != null && IsSolutionVisible)
         {
-            <h5>Solution</h5>
-
+             @((MarkupString)SelectedSolution.SolutionContent)
             <hr />
 
-            @((MarkupString)SelectedSolution.SolutionContent)
         }
             </Field>
         </ModalBody>

@@ -2,6 +2,8 @@
 {
     public class User
     {
-        public Publication Publication { get; set; }
+        public string Name { get; set; }
+        public string PublicationDomain { get; set; }
+        public SocialMedia SocialMedia { get; set; }
     }
 }
