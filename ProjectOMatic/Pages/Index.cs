@@ -101,7 +101,10 @@ namespace ProjectOMatic.Pages
             {
                 IsLoading = true;
 
-                ToggleSpinReel();
+                if (!projectModal.Visible)
+                {
+                    ToggleSpinReel();
+                }
 
                 if (SelectedSkillLevel != null)
                 {
@@ -128,11 +131,13 @@ namespace ProjectOMatic.Pages
                         {
                             SelectedProject.HasSolution = context.Solutions.Any(s => s.Project.Title == SelectedProject.Title);
 
-                            SelectedProject.ProjectBrief = MarkdownHelper.Parse(SelectedProject.ProjectBrief);
+                            SelectedProject.ProjectBrief = MarkdownHelper.Parse(SelectedProject.ProjectBrief);                            
 
-                            await Task.Delay(2000);
-
-                            ToggleSpinReel();
+                            if (!projectModal.Visible)
+                            {
+                                await Task.Delay(2000);
+                                ToggleSpinReel();
+                            }
 
                             await ShowProjectModal();
 
@@ -233,11 +238,20 @@ coverImage
 
         private Task ShowProjectModal()
         {
+            if (projectModal != null)
+            {
+                projectModal.Visible = true;
+            }
+
             return projectModal.Show();
         }
 
         private Task HideProjectModal()
         {
+            if (projectModal != null)
+            {
+                projectModal.Visible = false;
+            }
 
             return projectModal.Hide();
         }
