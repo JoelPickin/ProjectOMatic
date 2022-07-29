@@ -45,6 +45,4 @@ app.MapFallbackToPage("/_Host");
 
 app.UseDeveloperExceptionPage();
 
-var x = Environment.GetEnvironmentVariable("DATABASE_URL") ?? "Test";
-
 app.Run();

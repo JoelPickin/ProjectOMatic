@@ -398,7 +398,7 @@ div > pre {
     margin-top: 30px;
 }*/
 /*Modal Ends Here*/
-@media (max-width: 480px) {
+/*@media (max-width: 480px) {
     #main {
         background-color: #f3faf6;
         display: flex;
@@ -440,16 +440,16 @@ div > pre {
     }
 
     .overlay-button-container {
-    }
+    }*/
 
     /*Machine Start*/
-    #machine {
+    /*#machine {
 
-    }
+    }*/
 
     /*Inner Machine Start*/
 
-#framework-center {
+/*#framework-center {
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -491,14 +491,14 @@ div > pre {
 .reel-text {
     font-weight: bold;
     margin: 10px 0 0 0;
-}
+}*/
 
 /*Inner Machine End*/
 
 
 /*Control Panel Start*/
 
-#control-panel {
+/*#control-panel {
     display: flex;
     justify-content: center;
     border-radius: 5px;
@@ -597,10 +597,10 @@ div > pre {
 
     #fetch-button:hover {
         background-color: #ed8d82;
-    }
+    }*/
 
 /*Control Panel eND*/
-}
+/*}*/
 
 
 .reel {

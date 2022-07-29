@@ -23,10 +23,9 @@ namespace ProjectOMatic.Data
                     .AddEnvironmentVariables()
                     .Build();
 
-                var x = Environment.GetEnvironmentVariable("DATABASE_URL") ?? "Test";
-                var connectionString = configuration.GetConnectionString(Environment.GetEnvironmentVariable("ConnectionString"));
+                var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") ?? configuration.GetConnectionString("Database:ConnectionString");
 
-                optionsBuilder.UseMySql(x, new MySqlServerVersion(new Version(10, 4, 17)));
+                optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(10, 4, 17)));
             }
         }
     }
