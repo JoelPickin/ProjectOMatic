@@ -15,14 +15,12 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<MarkdownService>();
 
-
 builder.Services
     .AddBlazorise(options =>
     {
         options.Immediate = true;
     })
-    .AddBootstrapProviders()
-    .AddFontAwesomeIcons();
+    .AddBootstrapProviders();
 
 var app = builder.Build();
 
@@ -47,5 +45,6 @@ app.MapFallbackToPage("/_Host");
 
 app.UseDeveloperExceptionPage();
 
+var x = Environment.GetEnvironmentVariable("DATABASE_URL") ?? "Test";
 
 app.Run();

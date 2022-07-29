@@ -20,12 +20,13 @@ namespace ProjectOMatic.Data
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json")
                     .AddUserSecrets<Program>()
+                    .AddEnvironmentVariables()
                     .Build();
 
-                var x = Environment.GetEnvironmentVariable("ConnectionString");
+                var x = Environment.GetEnvironmentVariable("DATABASE_URL") ?? "Test";
                 var connectionString = configuration.GetConnectionString(Environment.GetEnvironmentVariable("ConnectionString"));
 
-                optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(10, 4, 17)));
+                optionsBuilder.UseMySql(x, new MySqlServerVersion(new Version(10, 4, 17)));
             }
         }
     }

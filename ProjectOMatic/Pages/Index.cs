@@ -101,6 +101,8 @@ namespace ProjectOMatic.Pages
             {
                 IsLoading = true;
 
+                ToggleSpinReel();
+
                 if (SelectedSkillLevel != null)
                 {
                     using ProjectDbContext context = new ProjectDbContext();
@@ -127,6 +129,10 @@ namespace ProjectOMatic.Pages
                             SelectedProject.HasSolution = context.Solutions.Any(s => s.Project.Title == SelectedProject.Title);
 
                             SelectedProject.ProjectBrief = MarkdownHelper.Parse(SelectedProject.ProjectBrief);
+
+                            await Task.Delay(2000);
+
+                            ToggleSpinReel();
 
                             await ShowProjectModal();
 
@@ -372,6 +378,15 @@ coverImage
                     SelectedFramework = Frameworks[index - 1];
                 }
             }
+        }
+
+        private bool spinReels = false;
+
+        private string? SpinReelCssClass => spinReels ? "reel" : null;
+
+        private void ToggleSpinReel()
+        {
+            spinReels = !spinReels;
         }
     }
 }
