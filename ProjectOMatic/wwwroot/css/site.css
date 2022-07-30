@@ -94,7 +94,7 @@ a, .btn-link {
 }
 
 .title {
-width: 80%;
+width: 60%;
 }
 
 .overlay-button {
@@ -374,10 +374,18 @@ Text Container Start*/
     font-family: 'Bebas Neue', cursive;
 }
 
+.modal-close-button:hover {
+    background-color: #dae3de;
+}
+
 .modal-fetch-button {
     background-color: #9BD9B2;
     color: black;
     font-family: 'Bebas Neue', cursive;
+}
+
+.modal-fetch-button:hover {
+    background-color: #b3ffcf;
 }
 
 div > pre {
