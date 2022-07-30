@@ -2,6 +2,7 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
 }
 
 h1:focus {
@@ -119,6 +120,8 @@ width: 60%;
     text-align: center;
     margin: auto;
     padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 img, video {
@@ -130,9 +133,9 @@ a {
     color: #417980;
 }
 
-    a:hover {
-        color: #63b7c2;
-    }
+a:hover {
+    color: #63b7c2;
+}
 
 /*Machine Start*/
 #machine {
