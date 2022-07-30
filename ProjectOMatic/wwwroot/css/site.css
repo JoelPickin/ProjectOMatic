@@ -2,8 +2,6 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 h1:focus {
@@ -148,6 +146,7 @@ a {
     border-radius: 5px;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .reel-frames {
