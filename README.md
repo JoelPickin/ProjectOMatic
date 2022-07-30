@@ -46,6 +46,8 @@ This is just here to guide you in these areas so you can go off and create/contr
 
 ## How to contribute
 
+[Check out this guide to learn how to contribute to open-source](https://opensource.guide/how-to-contribute/)
+
 ### How to add a project
 
 - Create a markdown file using this template. You can create it in any text editor or an online markdown editor. Save it locally with the name of the project. E.g. Calculator.md
@@ -87,7 +89,10 @@ REMOVE - *Example(Create a calculator)*
 
 ## How to add a solution
 
-- Head over to Hashnode
+[Hashnode Getting Started Docs](https://support.hashnode.com/docs/)
+[Check out this guide on getting started with technical writing](https://alexandriastech.hashnode.dev/what-you-should-know-about-technical-writing-and-get-paid)
+
+- Head over to [Hashnode](https://hashnode.com/)
 - Create an account if you don't have one
 - Create a new blog post.
 - Using markdown write up the steps you took to create a project. Using links, libraries, images etc.
