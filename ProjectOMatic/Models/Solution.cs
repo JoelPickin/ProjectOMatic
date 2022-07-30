@@ -27,5 +27,9 @@ namespace ProjectOMatic.Models
         public string SolutionContent { get; set; }
         [NotMapped]
         public string Title { get; set; }
+        [NotMapped]
+        public string Author { get; set; }
+        [NotMapped]
+        public string SocialLink { get; set; }
     }
 }

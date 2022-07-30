@@ -172,6 +172,9 @@ namespace ProjectOMatic.Pages
 
                     SelectedSolution.SolutionContent = MarkdownHelper.Parse(solution.Content);
                     SelectedSolution.Title = solution.Title;
+                    SelectedSolution.Author = solution.Author.Name;
+
+                    SetSocialLink(solution.Author.SocialMedia);
                 }
                 else
                 {
@@ -181,6 +184,9 @@ namespace ProjectOMatic.Pages
 
                     SelectedSolution.SolutionContent = MarkdownHelper.Parse(solution.Content);
                     SelectedSolution.Title = solution.Title;
+                    SelectedSolution.Author = solution.Author.Name;
+
+                    SetSocialLink(solution.Author.SocialMedia);
                 }
 
                 IsSolutionVisible = true;
@@ -200,6 +206,28 @@ namespace ProjectOMatic.Pages
             }
         }
 
+        private void SetSocialLink(SocialMedia socialLinks)
+        {
+            if (socialLinks != null)
+            {
+                if (!string.IsNullOrEmpty(socialLinks.Twitter))
+                {
+                    SelectedSolution.SocialLink = socialLinks.Twitter;
+                }
+                else if (!string.IsNullOrEmpty(socialLinks.Website))
+                {
+                    SelectedSolution.SocialLink = socialLinks.Website;
+                }
+                else if (!string.IsNullOrEmpty(socialLinks.GitHub))
+                {
+                    SelectedSolution.SocialLink = socialLinks.GitHub;
+                }
+                else if (!string.IsNullOrEmpty(socialLinks.LinkedIn))
+                {
+                    SelectedSolution.SocialLink = socialLinks.LinkedIn;
+                }
+            }
+        }
 
         public async Task<Post> GetSolution(string slug, string hostName)
         {
@@ -214,7 +242,16 @@ namespace ProjectOMatic.Pages
       post(slug:""{slug}"", hostname: ""{hostName}"") {{
         title
         content
-coverImage
+            author {{
+      name
+      publicationDomain
+      socialMedia {{
+        twitter
+        github
+        linkedin
+      	website
+      }}
+    }}
       }}
         }}"
             };

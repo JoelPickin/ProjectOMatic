@@ -327,8 +327,7 @@ Text Container Start*/
 
 .sub-title {
     margin: auto;
-    max-width: 300px;
-    min-width: 250px;
+    width: 50%;
 }
 
 .sub-title-heading {

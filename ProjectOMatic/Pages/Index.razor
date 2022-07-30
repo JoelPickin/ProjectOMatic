@@ -145,7 +145,16 @@
         {
             <div>
                 <h1 class="solution-heading">@SelectedSolution.Title</h1>
-                <h3 class="solution-heading">Created By: <a href="https://twitter.com/TechPickleJoel">Joel Pickin</a></h3>
+
+                @if(string.IsNullOrEmpty(@SelectedSolution.SocialLink))
+                {
+                    <h3 class="solution-heading">Created By: @SelectedSolution.Author</h3>                            
+                }
+                else
+                {
+                    <h3 class="solution-heading">Created By: <a href="@SelectedSolution.SocialLink">@SelectedSolution.Author</a></h3>                            
+                }
+
             </div>
 
              <hr />
