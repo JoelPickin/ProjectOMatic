@@ -131,7 +131,7 @@ namespace ProjectOMatic.Pages
                         {
                             SelectedProject.HasSolution = context.Solutions.Any(s => s.Project.Title == SelectedProject.Title);
 
-                            SelectedProject.ProjectBrief = MarkdownHelper.Parse(SelectedProject.ProjectBrief);                            
+                            SelectedProject.ProjectBrief = MarkdownHelper.Parse(SelectedProject.ProjectBrief);
 
                             if (!projectModal.Visible)
                             {
@@ -305,13 +305,6 @@ namespace ProjectOMatic.Pages
             IsSolutionVisible = false;
             solutionModal.Hide();
             return projectModal.Show();
-        }
-
-        private Task OnModalClosing(ModalClosingEventArgs e)
-        {
-            projectModal.Visible = false;
-            IsSolutionVisible = false;
-            return Task.CompletedTask;
         }
 
         public void UpSkillLevelButton()
