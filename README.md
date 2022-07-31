@@ -1,6 +1,6 @@
 # Project-o-Matic
 
-**An open-source collaboration effort to improve your technical writing and give other developers inspiration.**
+**An open-source collaboration effort to give you project inspiration whilst improving your technical writing skills.**
 
 ## This project is here to achieve three things
 
@@ -92,7 +92,7 @@ REMOVE - *Example(Create a calculator)*
 [Hashnode Getting Started Docs](https://support.hashnode.com/docs/)
 [Check out this guide on getting started with technical writing](https://alexandriastech.hashnode.dev/what-you-should-know-about-technical-writing-and-get-paid)
 
-- Head over to [Hashnode](https://hashnode.com/)
+- Head over to [Hashnode](https://hashnode.com/).
 - Create an account if you don't have one
 - Create a new blog post.
 - Using markdown write up the steps you took to create a project. Using links, libraries, images etc.
