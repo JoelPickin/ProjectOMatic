@@ -16,32 +16,35 @@ namespace ProjectOMatic.Services
 
             var jsonContent = File.ReadAllText(solutionListFile.FullName);
 
-            var solutionList = JsonSerializer.Deserialize<List<Solution>>(jsonContent);
-
-            var solutionCount = GetSolutionCountFromDB();
-
-            using ProjectDbContext context = new ProjectDbContext();
-
-            if (solutionList.Count() > solutionCount)
+            if (!string.IsNullOrEmpty(jsonContent))
             {
-                for(int i = solutionCount; i < solutionList.Count(); i++)
+                var solutionList = JsonSerializer.Deserialize<List<Solution>>(jsonContent);
+
+                var solutionCount = GetSolutionCountFromDB();
+
+                using ProjectDbContext context = new ProjectDbContext();
+
+                if (solutionList.Count() > solutionCount)
                 {
-                    var project = context.Projects.Where(p => p.Title.ToLower() == solutionList[i].ProjectName.ToLower()).FirstOrDefault();
-                    var language = context.Languages.Where(l => l.Name.ToLower() == solutionList[i].LanguageName.ToLower()).FirstOrDefault();
-                    var framework = context.Frameworks.Where(l => l.Name.ToLower() == solutionList[i].FrameworkName.ToLower()).FirstOrDefault();
-
-                    Solution solution = new Solution
+                    for(int i = solutionCount; i < solutionList.Count(); i++)
                     {
-                        Slug = solutionList[i].Slug,
-                        HostName = solutionList[i].HostName,
-                        Project = project,
-                        Language = language,
-                        Framework = framework,
-                    };
+                        var project = context.Projects.Where(p => p.Title.ToLower() == solutionList[i].ProjectName.ToLower()).FirstOrDefault();
+                        var language = context.Languages.Where(l => l.Name.ToLower() == solutionList[i].LanguageName.ToLower()).FirstOrDefault();
+                        var framework = context.Frameworks.Where(l => l.Name.ToLower() == solutionList[i].FrameworkName.ToLower()).FirstOrDefault();
 
-                    context.Solutions.Add(solution);
+                        Solution solution = new Solution
+                        {
+                            Slug = solutionList[i].Slug,
+                            HostName = solutionList[i].HostName,
+                            Project = project,
+                            Language = language,
+                            Framework = framework,
+                        };
 
-                    context.SaveChanges();
+                        context.Solutions.Add(solution);
+
+                        context.SaveChanges();
+                    }
                 }
             }
         }
