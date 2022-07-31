@@ -16,35 +16,32 @@ namespace ProjectOMatic.Services
 
             var jsonContent = File.ReadAllText(solutionListFile.FullName);
 
-            if (!string.IsNullOrEmpty(jsonContent))
+            var solutionList = JsonSerializer.Deserialize<List<Solution>>(jsonContent);
+
+            var solutionCount = GetSolutionCountFromDB();
+
+            using ProjectDbContext context = new ProjectDbContext();
+
+            if (solutionList.Count() > solutionCount)
             {
-                var solutionList = JsonSerializer.Deserialize<List<Solution>>(jsonContent);
-
-                var solutionCount = GetSolutionCountFromDB();
-
-                using ProjectDbContext context = new ProjectDbContext();
-
-                if (solutionList.Count() > solutionCount)
+                for(int i = solutionCount; i < solutionList.Count(); i++)
                 {
-                    for(int i = solutionCount; i < solutionList.Count(); i++)
+                    var project = context.Projects.Where(p => p.Title.ToLower() == solutionList[i].ProjectName.ToLower()).FirstOrDefault();
+                    var language = context.Languages.Where(l => l.Name.ToLower() == solutionList[i].LanguageName.ToLower()).FirstOrDefault();
+                    var framework = context.Frameworks.Where(l => l.Name.ToLower() == solutionList[i].FrameworkName.ToLower()).FirstOrDefault();
+
+                    Solution solution = new Solution
                     {
-                        var project = context.Projects.Where(p => p.Title.ToLower() == solutionList[i].ProjectName.ToLower()).FirstOrDefault();
-                        var language = context.Languages.Where(l => l.Name.ToLower() == solutionList[i].LanguageName.ToLower()).FirstOrDefault();
-                        var framework = context.Frameworks.Where(l => l.Name.ToLower() == solutionList[i].FrameworkName.ToLower()).FirstOrDefault();
+                        Slug = solutionList[i].Slug,
+                        HostName = solutionList[i].HostName,
+                        Project = project,
+                        Language = language,
+                        Framework = framework,
+                    };
 
-                        Solution solution = new Solution
-                        {
-                            Slug = solutionList[i].Slug,
-                            HostName = solutionList[i].HostName,
-                            Project = project,
-                            Language = language,
-                            Framework = framework,
-                        };
+                    context.Solutions.Add(solution);
 
-                        context.Solutions.Add(solution);
-
-                        context.SaveChanges();
-                    }
+                    context.SaveChanges();
                 }
             }
         }

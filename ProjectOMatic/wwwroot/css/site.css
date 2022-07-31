@@ -154,8 +154,8 @@ a:hover {
 }
 
 .reel-frames {
-    height: 100%;
-    width: 100%;
+    height: 280px;
+    width: 130px;
     margin: 0px 20px;
     padding: 5px;
     border-radius: 10px;
@@ -190,19 +190,11 @@ a:hover {
     text-align: center;
 }
 
-.spin-reel-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.spin-reel-image {
-    height: 80px;
-    width: 80px;
-    margin: auto;
-}
 /*Inner Machine End*/
+
+
 /*Control Panel Start*/
+
 #control-panel {
     display: flex;
     justify-content: center;
@@ -326,26 +318,11 @@ Text Container Start*/
 .text-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-}
-
-.text-heading {
-    text-align: center;
-    padding-bottom: 20px;
     font-weight: bold;
-}
-
-ol {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-li {
-    font-weight: bold;
-    padding-bottom: 10px;
 }
 
 .sub-title {
