@@ -17,8 +17,8 @@
             <div class="reel-frames">
               <div class="reels-machinery">
                     <div class="figures" name="level">
-                        <div class="@SpinReelCssClass spin-reel-container">
-                        <img class="spin-reel-image" src="images/skill-level-icons/@SelectedSkillLevel.Icon"/>
+                        <div class="@SpinReelCssClass">
+                        <img height="80" width="80" src="images/skill-level-icons/@SelectedSkillLevel.Icon"/>
                         <p class="reel-text">@SelectedSkillLevel?.Name</p>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
             </div>  
             </div>
           </div>
-       <div id="button-panel">
+                                          <div id="button-panel">
             <div id="fetch-button" class="buttons" @onclick="FetchProject">GO</div>
       </div>
     </div>
@@ -95,7 +95,7 @@
 </div>
 
    
-<Modal Closing="@OnModalClosing" @ref="projectModal">
+<Modal @ref="projectModal">
     <ModalContent Centered Size="ModalSize.Fullscreen">
          <ModalHeader Class="modal-header"></ModalHeader>
         <ModalBody Class="modal-body">
@@ -135,7 +135,7 @@
 </Modal>
 
 
-<Modal Closing="@OnModalClosing" @ref="solutionModal">
+<Modal @ref="solutionModal">
     <ModalContent Centered Size="ModalSize.ExtraLarge">
         <ModalHeader Class="modal-header">
            </ModalHeader>
