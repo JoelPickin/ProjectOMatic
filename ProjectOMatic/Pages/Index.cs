@@ -307,6 +307,13 @@ namespace ProjectOMatic.Pages
             return projectModal.Show();
         }
 
+        private Task OnModalClosing(ModalClosingEventArgs e)
+        {
+            projectModal.Visible = false;
+            IsSolutionVisible = false;
+            return Task.CompletedTask;
+        }
+
         public void UpSkillLevelButton()
         {
             var skillLevel = SkillLevels.FirstOrDefault(s => s.Name == SelectedSkillLevel.Name);
