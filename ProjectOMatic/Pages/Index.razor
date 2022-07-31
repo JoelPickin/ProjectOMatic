@@ -12,7 +12,7 @@
                 <div class="title-container">
          <img class="title" src="images/PngLogo.png"/>
     </div>
- 
+       
        <div id="button-panel">
             <div id="fetch-button" class="buttons" @onclick="FetchProject">GO</div>
       </div>
@@ -22,6 +22,8 @@
         @*<Button Class="overlay-button">WTF is the Project-o-Matic?</Button>*@
     </div>
 
+    <TextAccordion></TextAccordion>
+
               <div class="footer">
       <p>Created for <a href="https://twitter.com/TechPickleJoel/status/1527273923037081601">The Self-Taught Tech Network</a> as part of the <a href="https://planetscale.com/?utm_source=hashnode&utm_medium=hackathon&utm_campaign=announcement_article">PlanetScale</a> X <a href="https://hashnode.com/?source=planetscale_hackathon_announcement">Hashnode</a> Hackathon</p>
     </div>
@@ -30,3 +32,79 @@
 
     </div>
 </div>
+
+   
+<Modal Closing="@OnModalClosing" @ref="projectModal">
+    <ModalContent Centered Size="ModalSize.Fullscreen">
+         <ModalHeader Class="modal-header"></ModalHeader>
+        <ModalBody Class="modal-body">
+            <Field>              
+                <div> 
+                    @if(SelectedProject != null)
+                    {
+                        @((MarkupString)SelectedProject.ProjectBrief)
+                    }                 
+                </div>
+            </Field>
+            <Field>              
+                    @if (SelectedProject.HasSolution)
+                    {                  
+                        @if(!IsSolutionVisible)
+                        {
+                            <h5>Want to see how someone else solved it?</h5>
+
+                            <a href="" @onclick="ShowSolution">Show Solution</a>
+                        }
+                    }
+                    else
+                    {
+                        <p>No solution available for this project. Why not <a href="https://github.com/JoelPickin/ProjectOMatic">add one</a>.</p>
+                    }
+            </Field>
+@*            <Field>              
+                <h4>Share Your Finished Product</h4>
+                <p>Share button here.</p>
+            </Field>*@
+        </ModalBody>
+        <ModalFooter Class="modal-footer">
+            <Button Class="modal-close-button" Clicked="@HideProjectModal">Close</Button>
+            <Button Class="modal-fetch-button" Clicked="FetchProject">New Project</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+<Modal Closing="@OnModalClosing" @ref="solutionModal">
+    <ModalContent Centered Size="ModalSize.ExtraLarge">
+        <ModalHeader Class="modal-header">
+           </ModalHeader>
+        <ModalBody>
+            <Field>              
+        @if(SelectedSolution != null && IsSolutionVisible)
+        {
+            <div>
+                <h1 class="solution-heading">@SelectedSolution.Title</h1>
+
+                @if(string.IsNullOrEmpty(@SelectedSolution.SocialLink))
+                {
+                    <h3 class="solution-heading">Created By: @SelectedSolution.Author</h3>                            
+                }
+                else
+                {
+                    <h3 class="solution-heading">Created By: <a href="@SelectedSolution.SocialLink">@SelectedSolution.Author</a></h3>                            
+                }
+
+            </div>
+
+             <hr />
+
+             @((MarkupString)SelectedSolution.SolutionContent)
+            <hr />
+        }
+            </Field>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideSolutionModal">Back to project</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
