@@ -281,7 +281,7 @@ a {
     color: white;
     border: none;
     padding: 5px;
-    font-size: 31px;
+    font-size: 10px;
     height:50px;
     width: 50px;
     background-color: #e7766a;
@@ -290,7 +290,7 @@ a {
     transition: all 0.1s ease;
     border-radius: 70%;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #a5372b;
 }
 

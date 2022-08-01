@@ -1,0 +1,9 @@
+[
+  {
+    "Slug": "example-slug",
+    "HostName": "joelpickin",
+    "ProjectName": "ExampleProjectName",
+    "LanguageName": "ExampleLanguageName",
+    "FrameworkName": "ExampleFrameworkName"
+  }
+]
