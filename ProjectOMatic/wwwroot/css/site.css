@@ -96,7 +96,7 @@ a, .btn-link {
 }
 
 .title {
-    width: 80%;
+    width: 60%;
 }
 
 .overlay-button {
@@ -443,6 +443,10 @@ div > pre {
 
     .column-right {
         display: none;
+    }
+
+    .title {
+        width: 100%;
     }
 }
 
