@@ -90,6 +90,7 @@ REMOVE - *Example(Create a calculator)*
 ## How to add a solution
 
 [Hashnode Getting Started Docs](https://support.hashnode.com/docs/)
+
 [Check out this guide on getting started with technical writing](https://alexandriastech.hashnode.dev/what-you-should-know-about-technical-writing-and-get-paid)
 
 - Head over to [Hashnode](https://hashnode.com/).
