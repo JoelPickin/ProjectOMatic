@@ -90,6 +90,7 @@ REMOVE - *Example(Create a calculator)*
 ## How to add a solution
 
 [Hashnode Getting Started Docs](https://support.hashnode.com/docs/)
+
 [Check out this guide on getting started with technical writing](https://alexandriastech.hashnode.dev/what-you-should-know-about-technical-writing-and-get-paid)
 
 - Head over to [Hashnode](https://hashnode.com/).
@@ -134,4 +135,4 @@ If your chosen tech stack or framework isn't available, you can create an issue 
 
 ## Hackathon
 
-This project was originally created as part of the [Planescale](https://planetscale.com/) X [Hashnode Hackathon](https://townhall.hashnode.com/planetscale-hackathon)
+This project was originally created as part of the [Planetscale](https://planetscale.com/) X [Hashnode Hackathon](https://townhall.hashnode.com/planetscale-hackathon)
