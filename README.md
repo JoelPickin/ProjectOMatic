@@ -134,4 +134,4 @@ If your chosen tech stack or framework isn't available, you can create an issue 
 
 ## Hackathon
 
-This project was originally created as part of the [Planescale](https://planetscale.com/) X [Hashnode Hackathon](https://townhall.hashnode.com/planetscale-hackathon)
+This project was originally created as part of the [Planetscale](https://planetscale.com/) X [Hashnode Hackathon](https://townhall.hashnode.com/planetscale-hackathon)
