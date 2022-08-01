@@ -96,7 +96,7 @@ a, .btn-link {
 }
 
 .title {
-    width: 60%;
+    width: 80%;
 }
 
 .overlay-button {
@@ -444,22 +444,6 @@ div > pre {
     .column-right {
         display: none;
     }
-
-    /*.accordion {
-        width: 100%;
-    }
-
-    .sub-title {
-        width: 100%;
-    }
-
-    #framework-center {
-        max-width: 100%;
-    }
-
-    .reel-frames {
-        margin: 0;
-    }*/
 }
 
 
