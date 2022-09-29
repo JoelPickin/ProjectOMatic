@@ -1,0 +1,120 @@
+# Contributing to ProjectOMatic
+We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+
+- Adding a project
+- Adding a solution
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Becoming a maintainer
+
+## We Develop with Github
+We use github to host code, to track issues and feature requests, as well as accept pull requests.
+
+## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
+Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)). We actively welcome your pull requests:
+
+1. Fork the repo and create your branch from `master`.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs, update the documentation.
+4. Ensure the test suite passes.
+5. Make sure your code lints.
+6. Issue that pull request!
+
+## How to add a project
+
+- Create a markdown file using this template. You can create it in any text editor or an online markdown editor. Save it locally with the name of the project. E.g. Calculator.md
+- Consider each individual step someone would need to take to create a project.
+- If possible make three different variations. One for beginners, one with more steps for intermediate and one fully fledged app to cover deeper concepts for advanced learners.
+
+
+```
+# <Project Title Name> 
+# REMOVE - Example(Calculator)
+
+*<Project Description>*
+REMOVE - *Example(Create a calculator)*
+
+## Features
+<Add a list of features>
+- Create a grid UI
+	- Add numbers 0 - 9
+	- Add a plus button
+	- Add a minus button
+	- Add an equals button
+	- Add a multiply button
+	- Add a modulo/remainder operator
+	- Add a decimal button
+	- Add a reset button
+	- Input section to show entered numbers
+
+### Created By: [YOUR NAME](YOUR CHOSEN SOCIAL MEDIA OR WEBSITE) 
+```
+
+- Download the code
+- Open in your chosen IDE
+- Upload the file to the wwwroot < project-files < beginner/intermediate/advanced depending on the markdown file. Ensure each file for each skill level has the same name.
+- Commit your code to source control on GitHub.
+- Create a pull request.
+- Wait for it to be reviewed.
+- Merge it into the master branch.
+- The system does the rest of the work to add the project to the database.
+
+## How to add a solution
+
+[Hashnode Getting Started Docs](https://support.hashnode.com/docs/)
+
+[Check out this guide on getting started with technical writing](https://alexandriastech.hashnode.dev/what-you-should-know-about-technical-writing-and-get-paid)
+
+- Head over to [Hashnode](https://hashnode.com/).
+- Create an account if you don't have one
+- Create a new blog post.
+- Using markdown write up the steps you took to create a project. Using links, libraries, images etc.
+- Publish your post.
+- Then copy the slug of your post. The slug is the line following your hashnode blog domain.
+- Head over to the GitHub repo.
+- Download the code.
+- Open your chosen IDE.
+- Open Solutions.json, which is under wwwroot inside a folder called solution-files.
+- Copy and paste the last entry in this file and fill in the required details.
+- Slug is the part of the blog post URL you copied earlier.
+- HostName is your Hashnode account name.
+- ProjectName is the name of the project file your solution relates to. If you need to check this it will be under wwwroot < project-files. If one doesn't exist for your created solution, add one using the guide above in "How to add a project".
+- LanguageName is the language it relates to. This is always in PascalCase.
+- FrameworkName is the framework it relates to. If the project doesn't use a framework it will always be "Vanilla". If it does, add the correct name. e.g. React, Vue etc.
+- Save the file.
+- Commit your code to source control on GitHub.
+- Create a pull request.
+- Wait for the code to be reviewed.
+- Merge the code into the master branch.
+
+## Any contributions you make will be under the MIT Software License
+In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
+
+## Report bugs using Github's [issues](https://github.com/briandk/transcriptase-atom/issues)
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](); it's that easy!
+
+## Write bug reports with detail, background, and sample code
+[This is an example](http://stackoverflow.com/q/12488905/180626) of a bug report, and I think it's not a bad model. Here's [another example from Craig Hockenberry](http://www.openradar.me/11905408).
+
+**Great Bug Reports** tend to have:
+
+- A quick summary and/or background
+- Steps to reproduce
+  - Be specific!
+  - Give sample code if you can. [This stackoverflow question](http://stackoverflow.com/q/12488905/180626) includes sample code that *anyone* with a base R setup can run to reproduce what I was seeing
+- What you expected would happen
+- What actually happens
+- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+
+People *love* thorough bug reports. I'm not even kidding.
+
+## Use a Consistent Coding Style
+
+* tabs for indentation
+
+## License
+By contributing, you agree that your contributions will be licensed under its MIT License.
+
+## References
+This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)
