@@ -1,4 +1,4 @@
-![PROJECT-0-matic](https://user-images.githubusercontent.com/80773310/194979405-9df5df2d-d368-41bf-8ca8-e4aa040a6fc1.gif)
+https://user-images.githubusercontent.com/80773310/194979405-9df5df2d-d368-41bf-8ca8-e4aa040a6fc1.gif
 
 ## 3 Goals of Project-O-Matic
 - An introduction to contributing to open-source
@@ -54,7 +54,7 @@ REMOVE - *Example(Create a calculator)*
 
 - Download the code
 - Open in your chosen IDE
-- Upload the file to the www root < project-files < beginner/intermediate/advanced depending on the markdown file. Ensure each file for each skill level has the same name.
+- Upload the file to the wwwroot < project-files < beginner/intermediate/advanced depending on the markdown file. Ensure each file for each skill level has the same name.
 - Commit your code to source control on GitHub.
 - Create a pull request.
 - Wait for it to be reviewed.
@@ -70,7 +70,7 @@ REMOVE - *Example(Create a calculator)*
 - Head over to [Hashnode](https://hashnode.com/).
 - Create an account if you don't have one
 - Create a new blog post.
-- Using markdown, write up the steps you took to create a project. I was using links, libraries, images, etc.
+- Using markdown, write up the steps you took to create a project, including any links, libraries, images, etc.
 - Publish your post.
 - Then copy the slug of your post. The slug is the line following your hashnode blog domain.
 - Head over to the GitHub repo.
