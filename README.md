@@ -1,4 +1,4 @@
-https://user-images.githubusercontent.com/80773310/194979405-9df5df2d-d368-41bf-8ca8-e4aa040a6fc1.gif
+![](https://user-images.githubusercontent.com/80773310/194979405-9df5df2d-d368-41bf-8ca8-e4aa040a6fc1.gif)
 
 ## 3 Goals of Project-O-Matic
 - An introduction to contributing to open-source
