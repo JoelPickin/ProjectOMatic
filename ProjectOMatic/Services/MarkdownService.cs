@@ -8,7 +8,7 @@ namespace ProjectOMatic.Services
 {
     public class MarkdownService
     {
-        public async Task LoadSolutionMarkdownDataToDB(string webRootPath)
+        public void LoadSolutionMarkdownDataToDB(string webRootPath)
         {
             string path = Path.Combine(webRootPath, "solution-files");
 
@@ -56,7 +56,7 @@ namespace ProjectOMatic.Services
             return context.Solutions.Count();
         }
 
-        public async Task LoadProjectMarkdownDataToDB(string webRootPath)
+        public void LoadProjectMarkdownDataToDB(string webRootPath)
         {
             string path = Path.Combine(webRootPath, "project-files");
 
