@@ -30,9 +30,6 @@ namespace ProjectOMatic.Pages
 
         protected override void OnInitialized()
         {
-            _markdownService.LoadProjectMarkdownDataToDB(appEnvironment.WebRootPath);
-            _markdownService.LoadSolutionMarkdownDataToDB(appEnvironment.WebRootPath);
-
             SkillLevels = LoadSkillLevels();
             Languages = LoadLanguages();
 
@@ -47,6 +44,9 @@ namespace ProjectOMatic.Pages
 
         private List<SkillLevel> LoadSkillLevels()
         {
+            _markdownService.LoadProjectMarkdownDataToDB(appEnvironment.WebRootPath);
+            _markdownService.LoadSolutionMarkdownDataToDB(appEnvironment.WebRootPath);
+
             using ProjectDbContext context = new ProjectDbContext();
 
             List<SkillLevel> skillLevels = context.SkillLevels.ToList();
